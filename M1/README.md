@@ -12,6 +12,33 @@ you can also add pid to the end of the command , to only display the sub-tree wi
         ./pstree-64 [-p] [-t] [-n] pid 
 ```
 ## Problems 
+### P1
+Before beginning your laboratory work in Linux, it is essential to have a clear understanding of how proceeses are saved. All processes are stored in a directory called "/proc" as subdirectories,identified by their porcess IDs.For instance , a process with ID 1 would be stored in "/proc/1" , and a process with ID 2 would be stored in "/proc/2", and so on.
+
+To access  process information , run the following command:
+        
+        vim /proc/{pid}/status
+
+Upon running this command , a file containing essential information about the process will be displayed . 
+         
+        file information
+
+The following information is particularly important:
+- Pid: the process ID
+- Tgid: the process group ID
+- PPid: the parent  process ID
+- Name: the process name
+
+
+Furthermore,all Threads are save in the directory "/proc/{pid}/task". The directory structure is as follow:
+
+        /proc/{pid}/task
+                        /{tid}
+                        /{tid}
+                        /{tid}
+                        ...
+
+Each subdirctory corresponds to a thread , identified by its thread ID(tid). Understanding these file structures and commands is crucial for efficient and effective work of Linux processes and threads .
 
 
 ## Example
